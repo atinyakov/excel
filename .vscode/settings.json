@@ -1,0 +1,10 @@
+{
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "eslint.run": "onSave",
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "prettier.requireConfig": true
+}
