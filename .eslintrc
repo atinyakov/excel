@@ -7,8 +7,9 @@
     },
     "rules": {
         "linebreak-style":"off",
-        "quotes": [2, "single", "avoid-escape"]
+        "quotes": [2, "single", "avoid-escape"],
+        "require-jsdoc" : 0
     },
-    "extends": ["eslint:recommended", "google"]
+    "extends": ["eslint:recommended", "google","prettier"]
   
 }
