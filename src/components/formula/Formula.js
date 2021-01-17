@@ -1,7 +1,15 @@
 import ExcelComponent from '@core/ExcelComponent';
 
 export default class Formula extends ExcelComponent {
+    static className = 'excel__formula';
+
     toHTML() {
-        return '<h1>Forn</h1>';
+        return `
+        <div class="formula__info">fx</div>
+        <div
+            class="formula__input"
+            contenteditable
+            spellcheck="false"
+        ></div>`;
     }
 }

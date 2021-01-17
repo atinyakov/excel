@@ -1,4 +1,4 @@
-// import ExcelComponent from '@core/ExcelComponent';
+import { $ } from '@core/dom';
 
 export default class Excel {
     constructor(selector, options) {
@@ -7,10 +7,19 @@ export default class Excel {
     }
 
     getRoot() {
-        const $root = document.createElement('div');
+        const $root = $.create('div', 'excel');
+        //  = document.createElement('div');
+        // $root.classList.add('excel');
+
         this.components.forEach((Component) => {
-            const component = new Component();
-            $root.insertAdjacentHTML('beforeend', component.toHTML());
+            // const $el = document.createElement('div');
+            const $el = $.crete('div', Component.className);
+            // $el.classList.add(Component.className);
+
+            const component = new Component($el);
+            $el.innerHTML = component.toHTML();
+            // $root.insertAdjacentHTML('beforeend', component.toHTML());
+            $root.append($el);
         });
         return $root;
     }
