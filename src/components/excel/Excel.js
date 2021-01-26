@@ -11,7 +11,7 @@ export default class Excel {
         //  = document.createElement('div');
         // $root.classList.add('excel');
 
-        this.components.forEach((Component) => {
+        this.components = this.components.map((Component) => {
             // const $el = document.createElement('div');
             const $el = $.create('div', Component.className);
             // $el.classList.add(Component.className);
@@ -22,6 +22,7 @@ export default class Excel {
             $el.html(component.toHTML());
             // $root.insertAdjacentHTML('beforeend', component.toHTML());
             $root.append($el);
+            return component;
         });
         return $root;
     }
